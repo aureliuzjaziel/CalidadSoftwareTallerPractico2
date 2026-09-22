@@ -19,6 +19,7 @@ namespace TallerPractico.Services
             if (pokemon != null)
             {
                 PopulateImages(pokemon);
+                PopulateTypesAndAbilities(pokemon);
                 return pokemon;
             }
             return new Pokemon();
@@ -30,6 +31,7 @@ namespace TallerPractico.Services
             if (pokemon != null)
             {
                 PopulateImages(pokemon);
+                PopulateTypesAndAbilities(pokemon);
                 return pokemon;
             }
             return new Pokemon();
@@ -71,6 +73,29 @@ namespace TallerPractico.Services
             }
             Collect(pokemon.Sprites);
             pokemon.Images = images.Distinct().ToList();
+        }
+
+        // Extrae nombres de tipos y habilidades desde las propiedades parseadas de PokeAPI
+        private void PopulateTypesAndAbilities(Pokemon pokemon)
+        {
+            // Tipos
+            if (pokemon.types != null && pokemon.types.Count > 0)
+            {
+                pokemon.TypeNames = pokemon.types
+                    .OrderBy(t => t.slot)
+                    .Where(t => t.type != null)
+                    .Select(t => t.type.name)
+                    .ToList();
+            }
+
+            // Habilidades
+            if (pokemon.abilities != null && pokemon.abilities.Count > 0)
+            {
+                pokemon.AbilityNames = pokemon.abilities
+                    .Where(a => a.ability != null)
+                    .Select(a => a.ability.name)
+                    .ToList();
+            }
         }
     }
 }

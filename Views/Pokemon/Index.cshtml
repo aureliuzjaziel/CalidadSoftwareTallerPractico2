@@ -54,7 +54,18 @@
 
                 <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title text-capitalize">@pokemon.Name</h5>
-                    <a class="btn btn-primary mt-2" asp-controller="Pokemon" asp-action="Details" asp-route-id="@pokemon.Id">Ver Detalles</a>
+
+                    @if (pokemon.TypeNames != null && pokemon.TypeNames.Count > 0)
+                    {
+                        <div class="pokemon-badges mt-2 mb-2" style="justify-content:center;">
+                            @foreach (var typeName in pokemon.TypeNames)
+                            {
+                                <span class="pokemon-badge type-@typeName.ToLower()">@typeName</span>
+                            }
+                        </div>
+                    }
+
+                    <a class="btn btn-primary mt-auto" asp-controller="Pokemon" asp-action="Details" asp-route-id="@pokemon.Id">Ver Detalles</a>
                 </div>
             </div>
         }

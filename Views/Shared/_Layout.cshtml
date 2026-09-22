@@ -13,7 +13,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pokemon Page</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Pokemon" asp-action="Index">
+                    <span style="color: #ffdd00;">⚡</span> Pokémon Page <span style="color: #ff355e;">⚡</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,10 +23,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Index">Pokemons</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Index">Pokémons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Sample">Explore</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -33,6 +38,17 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="site-hero d-flex justify-content-between align-items-center">
+                <div>
+                    <h1>Pokémon Visual</h1>
+                    <p>🔥 Explora Pokémons, sus habilidades y tipos</p>
+                </div>
+                <div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="logo" style="height:80px; filter: drop-shadow(0 4px 12px rgba(255,221,0,0.5));" />
+                </div>
+            </div>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

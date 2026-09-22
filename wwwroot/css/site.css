@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Rubik+Mono+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+body {
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  min-height: 100vh;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -17,41 +33,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-}
-
-/* Estilos personalizados para apariencia Pokémons */
-body {
-  background: linear-gradient(180deg, #f8fbff 0%, #e9f2ff 100%);
-  color: #222;
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  color: #d90429 !important; /* rojo tipo pokeball */
-}
-
-.card {
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.12s ease-in-out;
-}
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card .card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.carousel-item img {
-  background: white;
-  padding: 8px;
-}
-
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
@@ -59,4 +40,300 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* ===== Navbar Estilos Gaming ===== */
+.navbar-brand {
+  font-weight: 800;
+  color: #ffdd00 !important;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7), -1px -1px 2px rgba(255,255,255,0.3);
+  font-family: 'Rubik Mono One', monospace;
+  letter-spacing: 2px;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgba(15, 12, 41, 0.95), rgba(48, 43, 99, 0.95)) !important;
+  border-bottom: 4px solid #ffdd00;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  color: #e0e0e0 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #ffdd00 !important;
+  text-shadow: 0 0 10px rgba(255, 221, 0, 0.8);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffdd00;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Hero Header ===== */
+.site-hero {
+  background: linear-gradient(90deg, rgba(255,53,94,0.85), rgba(255,148,0,0.85)) !important;
+  color: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(255, 53, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  border: 3px solid #ffdd00;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.site-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: 'Rubik Mono One', monospace;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+.site-hero p {
+  opacity: 0.98;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ===== Cards Pokemon ===== */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(255, 221, 0, 0.2);
+  background: rgba(48, 43, 99, 0.8) !important;
+  color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(255, 221, 0, 0.3);
+  border-color: #ffdd00;
+}
+
+.card .card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ffdd00;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.card .card-body {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Carousel Styling ===== */
+.carousel-item img {
+  background: linear-gradient(135deg, rgba(255, 221, 0, 0.1), rgba(255, 148, 0, 0.1));
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, rgba(255, 221, 0, 0.8), rgba(255, 148, 0, 0.8));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: linear-gradient(135deg, rgba(255, 148, 0, 1), rgba(255, 221, 0, 1));
+  transform: scale(1.15);
+}
+
+.carousel-control-prev::before,
+.carousel-control-next::before {
+  color: #000;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  font-weight: bold;
+}
+
+.carousel-control-prev::before {
+  content: '‹';
+}
+
+.carousel-control-next::before {
+  content: '›';
+}
+
+/* ===== Type Badges con Colores Oficiales ===== */
+.pokemon-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pokemon-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Colores de Tipos Pokémon */
+.type-normal { background: #A8A878 !important; color: white !important; }
+.type-fire { background: #F08030 !important; color: white !important; }
+.type-water { background: #6890F0 !important; color: white !important; }
+.type-grass { background: #78C850 !important; color: white !important; }
+.type-electric { background: #F8D030 !important; color: #333 !important; }
+.type-ice { background: #98D8D8 !important; color: #333 !important; }
+.type-fighting { background: #C03028 !important; color: white !important; }
+.type-poison { background: #A040A0 !important; color: white !important; }
+.type-ground { background: #E0C068 !important; color: #333 !important; }
+.type-flying { background: #A890F0 !important; color: white !important; }
+.type-psychic { background: #F85888 !important; color: white !important; }
+.type-bug { background: #A8B820 !important; color: white !important; }
+.type-rock { background: #B8A038 !important; color: white !important; }
+.type-ghost { background: #705898 !important; color: white !important; }
+.type-dragon { background: #7038F8 !important; color: white !important; }
+.type-dark { background: #705848 !important; color: white !important; }
+.type-steel { background: #B8B8D0 !important; color: #333 !important; }
+.type-fairy { background: #EE99AC !important; color: white !important; }
+
+.pokemon-badges {
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Detalles Pokemon ===== */
+.pokemon-details-sprites img {
+  max-width: 120px;
+  margin: 8px;
+  background: rgba(255, 221, 0, 0.15);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 221, 0, 0.3);
+}
+
+.pokemon-details-sprites img:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 8px 20px rgba(255, 221, 0, 0.4);
+}
+
+/* ===== Buttons Gaming ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #ff355e, #ff9400);
+  border: 2px solid #ffdd00;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 53, 94, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff9400, #ff355e);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 221, 0, 0.5);
+  color: white;
+}
+
+.btn-outline-primary {
+  color: #ffdd00;
+  border: 2px solid #ffdd00;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: #ffdd00;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(255, 221, 0, 0.3);
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  gap: 8px;
+}
+
+.page-link {
+  background: rgba(255, 221, 0, 0.15);
+  border: 2px solid #ffdd00;
+  color: #ffdd00;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.page-link:hover {
+  background: #ffdd00;
+  color: #333;
+}
+
+.page-item.disabled .page-link {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Form Input ===== */
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffdd00;
+  color: white;
+  font-weight: 600;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ff9400;
+  color: white;
+  box-shadow: 0 0 0 0.2rem rgba(255, 221, 0, 0.25);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-label {
+  color: #ffdd00;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }

@@ -1,0 +1,60 @@
+@model List<Pokemon>
+@{
+    ViewData["Title"] = "Explore Pokemons";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-2" style="color: #ffdd00;">⭐ Explore - Demo Interactivo</h2>
+    <p class="text-muted" style="opacity: 0.9;">Página de ejemplo con Pokémons ficticios enriquecidos para mejorar interactividad y diseño.</p>
+
+    <div class="row g-4 mt-2">
+        @foreach (var p in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-capitalize">@p.Name</h5>
+
+                        <div style="height:140px; display:flex; align-items:center; justify-content:center;">
+                            <img src="@(p.Images != null && p.Images.Count>0 ? p.Images[0] : p.Sprites?.Front_Default)" 
+                                 style="max-height:110px; object-fit:contain; filter: drop-shadow(0 4px 12px rgba(255,221,0,0.3));" 
+                                 alt="@p.Name" />
+                        </div>
+
+                        @if (p.TypeNames != null && p.TypeNames.Count > 0)
+                        {
+                            <div class="pokemon-badges justify-content-center mt-2 mb-2">
+                                @foreach (var typeName in p.TypeNames)
+                                {
+                                    <span class="pokemon-badge type-@typeName.ToLower()">@typeName</span>
+                                }
+                            </div>
+                        }
+
+                        <p class="card-text mt-2">
+                            <small>
+                                <strong>Altura:</strong> @p.Height • 
+                                <strong>Peso:</strong> @p.Weight
+                            </small>
+                        </p>
+
+                        @if (p.AbilityNames != null && p.AbilityNames.Count > 0)
+                        {
+                            <p class="card-text">
+                                <small style="color: #ffdd00;">
+                                    <strong>Habilidades:</strong> @string.Join(", ", p.AbilityNames.Take(2))
+                                </small>
+                            </p>
+                        }
+
+                        <div class="pokemon-badges justify-content-center mb-2">
+                            <span class="pokemon-badge">Demo</span>
+                        </div>
+
+                        <a class="btn btn-outline-primary" asp-controller="Pokemon" asp-action="Details" asp-route-id="@p.Id">Ver Detalle</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
